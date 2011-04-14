@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Fullscreen Music Player - Fullscreen Demo </title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="fullScreenMusic/soundmanager/script/soundmanager2.js"></script>
+    <script type="text/javascript" src="fullScreenMusic/ttwFullScreenMusic.js"></script>
+    <link rel="stylesheet" type="text/css" href="fullScreenMusic/css/style.css"/>
+
+
+    <script type="text/javascript">
+
+        /**
+         * These are soundManager settings. There
+         * is no need to change them unless you have
+         * read the soundManager documentation
+         * **/
+
+        soundManager.flashVersion = 9;
+        soundManager.useHighPerformance = true;
+        soundManager.wmode = 'transparent';
+        soundManager.useFastPolling = true;
+        soundManager.url = 'fullScreenMusic/soundmanager/swf/';
+        soundManager.debugMode = false;
+
+        /**
+         * Fullscreen music initialization
+         * Always make sure this call is wrapped in
+         * soundManager.onload to ensure all dependencies are loaded
+         * */
+
+        soundManager.onload = function()
+        {
+            $('.playlist').ttwFullScreenMusic({style:'fullscreen'});
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+<!-- The fullscreen player needs each mp3 to have a rel
+attribute with a link to the background image
+that will be used for that song -->
+
+
+<ul class="playlist">
+    <li>
+        <a href="sample-music/1.mp3" rel="sample-music/images/1.jpg">Sample Song 1</a>
+    </li>
+    <li>
+        <a href="sample-music/2.mp3" rel="sample-music/images/2.jpg">Sample Song 2</a>
+    </li>
+</ul>
+
+
+</body>
+</html>

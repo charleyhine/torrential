@@ -1,0 +1,7 @@
+<ul class="playlist">
+	<% @songs.each do |song| %>  
+	    <li>
+	        <a href="<%= download_url_for(song.key) %>"><%= download_url_for(song.key) %></a>
+	    </li>
+    <% end %>
+</ul>

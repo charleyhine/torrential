@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mp3app</title>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>  
+
+  <script type="text/javascript" src="fullScreenMusic/soundmanager/script/soundmanager2.js"></script>
+  <script type="text/javascript" src="fullScreenMusic/ttwFullScreenMusic.js"></script>
+  <link rel="stylesheet" type="text/css" href="fullScreenMusic/css/style.css"/>
+
+
+  <script type="text/javascript">
+
+      /**
+       * These are soundManager settings. There
+       * is no need to change them unless you have
+       * read the soundManager documentation
+       * **/
+
+      soundManager.flashVersion = 9;
+      soundManager.useHighPerformance = true;
+      soundManager.wmode = 'transparent';
+      soundManager.useFastPolling = true;
+      soundManager.url = 'fullScreenMusic/soundmanager/swf/';
+      soundManager.debugMode = false;
+
+      /**
+       * Fullscreen music initialization
+       * Always make sure this call is wrapped in
+       * soundManager.onload to ensure all dependencies are loaded
+       * */
+
+      soundManager.onload = function()
+      {
+          $('.playlist').ttwFullScreenMusic({style:'fullscreen'});
+      }
+
+
+  </script>
+</head>
+<body>
+	<%= yield %>  
+</body>
+</html>
