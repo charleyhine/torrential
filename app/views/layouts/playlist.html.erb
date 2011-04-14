@@ -1,42 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>mp3app</title>
-  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>  
+    <title>Fullscreen Music Player - Page-List Demo </title>
 
-  <script type="text/javascript" src="fullScreenMusic/soundmanager/script/soundmanager2.js"></script>
-  <script type="text/javascript" src="fullScreenMusic/ttwFullScreenMusic.js"></script>
-  <link rel="stylesheet" type="text/css" href="fullScreenMusic/css/style.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="fullScreenMusic/soundmanager/script/soundmanager2.js"></script>
+    <script type="text/javascript" src="fullScreenMusic/ttwFullScreenMusic.js"></script>
+    <link rel="stylesheet" type="text/css" href="fullScreenMusic/css/style.css"/>
 
+    <script type="text/javascript">
 
-  <script type="text/javascript">
+        /**
+         * These are soundManager settings. There
+         * is no need to change them unless you have
+         * read the soundManager documentation
+         * **/
 
-      /**
-       * These are soundManager settings. There
-       * is no need to change them unless you have
-       * read the soundManager documentation
-       * **/
+        soundManager.flashVersion = 9;
+        soundManager.useHighPerformance = true;
+        soundManager.wmode = 'transparent';
+        soundManager.useFastPolling = true;
+        soundManager.url = 'fullScreenMusic/soundmanager/swf/';
+        soundManager.debugMode = false;
 
-      soundManager.flashVersion = 9;
-      soundManager.useHighPerformance = true;
-      soundManager.wmode = 'transparent';
-      soundManager.useFastPolling = true;
-      soundManager.url = 'fullScreenMusic/soundmanager/swf/';
-      soundManager.debugMode = false;
+        /**
+         * Fullscreen music initialization
+         * Always make sure this call is wrapped in
+         * soundManager.onload to ensure all dependencies are loaded
+         * */
 
-      /**
-       * Fullscreen music initialization
-       * Always make sure this call is wrapped in
-       * soundManager.onload to ensure all dependencies are loaded
-       * */
+        soundManager.onload = function()
+        {
+            $('.playlist').ttwFullScreenMusic({style:'page-list'});
+        }
 
-      soundManager.onload = function()
-      {
-          $('.playlist').ttwFullScreenMusic({style:'fullscreen'});
-      }
-
-
-  </script>
+    </script>
 </head>
 <body>
 	<%= yield %>  
