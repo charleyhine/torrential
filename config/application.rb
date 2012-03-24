@@ -16,8 +16,8 @@ module Mp3app
     config.filter_parameters += [:password]
     
     AWS::S3::Base.establish_connection!(  
-        :access_key_id     => '1AM4N2GE5Y5TBXBH9P82',  
-        :secret_access_key => 'bYbl0ueIAOIp4RKN8nFAt1hFH61bacuA7zKPeGXe'
+        :access_key_id     => 'ACCESS_KEY_HERE',  
+        :secret_access_key => 'SECRET_ACCESS_KEY_HERE'
         )
     
     BUCKET = 'mp3buck'
